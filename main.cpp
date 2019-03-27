@@ -77,6 +77,8 @@ void blink_callback(MbedCloudClientResource *resource, const uint8_t *buffer, ui
 
     static DigitalOut augmentedLed(LED1); // LED that is used for blinking the pattern
 
+/* Removed for ARMCC */
+#if 0
     // Parse the pattern string, and toggle the LED in that pattern
     string s = std::string(pattern_res->get_value().c_str());
     size_t i = 0;
@@ -93,6 +95,7 @@ void blink_callback(MbedCloudClientResource *resource, const uint8_t *buffer, ui
             augmentedLed = !augmentedLed;
         }
     }
+#endif
 }
 
 /**
